@@ -4,8 +4,8 @@ const Pricing = () => {
   return (
     <Fragment>
       <section>
-        <div className="p-4 bg-[url(./assets/FaqBg.svg)] bg-no-repeat relative bg-cover bg-center min-h-[60vh]">
-          <p className="absolute bottom-0 rounded-t-2xl bg-white px-8 justify-center flex-col items-center min-w-[290px] mx-auto block py-6 font-bold text-2xl ">
+        <div className="p-4 bg-[url(./assets/FaqBg.svg)] flex justify-center items-end bg-no-repeat relative bg-cover bg-center min-h-[60vh]">
+          <p className="rounded-t-2xl mb-[-1rem] bg-white px-8 flex justify-center flex-col text-center w-[290px] py-6 font-bold text-2xl">
             Pricing
           </p>
         </div>

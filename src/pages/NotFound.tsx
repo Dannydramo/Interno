@@ -8,7 +8,7 @@ const NotFound = () => {
       <section className="overflow-y-hidden max-h-[100vh]">
         <div className="w-[95%] lg:w-[100%] mx-auto">
           <div className="flex flex-col-reverse lg:flex-row justify-between">
-            <div className="w-[80%] mx-auto lg:pl-24 lg:mx-0 mt-[12rem] text-center lg:text-start">
+            <div className="w-[80%] mx-auto lg:pl-24 lg:mx-0 mt-[6rem] lg:mt-[12rem] text-center lg:text-start">
               <div className="xl:w-[70%] lg:ml-24">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[7rem] font-bold">
                   404

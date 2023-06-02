@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import FaQuestion from "../components/FaqComponent/FaQuestion";
 
 const Faq = () => {
