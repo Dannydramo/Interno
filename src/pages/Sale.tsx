@@ -6,6 +6,7 @@ const Sale = () => {
   const [hitSaleImages, setHitSaleImages] = useState<string[]>([]);
   const [displayImageText, setDisplayImageText] =
     useState<string>("Loading...");
+  const [tryAagain, setTryAgain] = useState(false);
   const [categoryExternalID, setCategoryExternalID] = useState<string>("4");
   const [maxPrice, setMaxPrice] = useState<string>("50000");
   const [minPrice, setMinPrice] = useState<string>("10000");
@@ -77,7 +78,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${selectedFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -112,6 +113,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -127,7 +130,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&priceMin=${selectedFrequency}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -162,6 +165,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -176,7 +181,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${selectedFrequency}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -211,6 +216,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -225,7 +232,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${selectedFrequency}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -260,6 +267,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -274,7 +283,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${selectedFrequency}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -309,6 +318,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -323,7 +334,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${selectedFrequency}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -358,6 +369,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -372,7 +385,7 @@ const Sale = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${selectedFrequency}&bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -407,6 +420,8 @@ const Sale = () => {
         );
 
         setHitSaleImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -529,6 +544,12 @@ const Sale = () => {
           <p className="text-center mt-12 font-bold text-2xl">
             {displayImageText}
           </p>
+          {tryAagain && (
+            <p className="text-center mt-12 font-bold text-2xl">
+              No result Found
+            </p>
+          )}
+
           <div className="my-8">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {hitSaleImages}

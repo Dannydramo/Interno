@@ -6,6 +6,7 @@ const Rent = () => {
   const [hitRentImages, setHitRentImages] = useState<string[]>([]);
   const [displayImageText, setDisplayImageText] =
     useState<string>("Loading...");
+  const [tryAagain, setTryAgain] = useState(false);
   const [rentFrequency, setRentFrequency] = useState<string>("yearly");
   const [categoryExternalID, setCategoryExternalID] = useState<string>("4");
   const [maxPrice, setMaxPrice] = useState<string>("50000");
@@ -78,7 +79,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${selectedFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -113,6 +114,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -128,7 +131,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${selectedFrequency}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -163,6 +166,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -178,7 +183,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${selectedFrequency}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -213,6 +218,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -227,7 +234,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${selectedFrequency}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -262,6 +269,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -276,7 +285,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${selectedFrequency}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -311,6 +320,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -325,7 +336,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${selectedFrequency}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -360,6 +371,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -374,7 +387,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${selectedFrequency}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -409,6 +422,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -423,7 +438,7 @@ const Rent = () => {
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&categoryExternalID=${selectedFrequency}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&hasVideo=true`
       );
       console.log(hits);
-      if (hits) {
+      if (hits > 1) {
         const images = hits.map(
           (hitImage: {
             externalID: string;
@@ -458,6 +473,8 @@ const Rent = () => {
         );
 
         setHitRentImages(images);
+      } else {
+        setTryAgain(true);
       }
     } catch (error) {
       // Handle the error appropriately
@@ -591,6 +608,11 @@ const Rent = () => {
           <p className="text-center mt-12 font-bold text-2xl">
             {displayImageText}
           </p>
+          {tryAagain && (
+            <p className="text-center mt-12 font-bold text-2xl">
+              No result Found
+            </p>
+          )}
           <div className="my-8">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {hitRentImages}
